@@ -122,7 +122,7 @@ const EvaluationTool = () => {
         try {
             
 
-            const response = await fetch(`${import.meta.env.VITE_API_URL}/evaluate-exam`, {
+            const response = await fetch(`https://smart-education-a2la.onrender.com/evaluate-exam`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
