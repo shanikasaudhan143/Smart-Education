@@ -121,7 +121,7 @@ const EvaluationTool = () => {
 
         try {
             
-
+            // to test with loacalhost replace the url with http://localhost:8000/evaluate-exam
             const response = await fetch(`https://smart-education-a2la.onrender.com/evaluate-exam`, {
                 method: 'POST',
                 headers: {
