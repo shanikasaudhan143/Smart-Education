@@ -6,6 +6,7 @@ import ReactMarkdown from 'react-markdown';
 // import { useAuth } from '../../../components/AuthContext'; // Adjust the path as necessary
 import './EvaluationTool.css';
 import { jsPDF } from 'jspdf';
+const API_BASE = process.env.REACT_APP_API_URL; 
 // import config from '../../../config';
 import LoadingEvaluation from './LoadingEvaluation';  
 
@@ -119,14 +120,16 @@ const EvaluationTool = () => {
         };
 
         try {
-            const response = await fetch("http://localhost:8000/evaluate-exam", {
+            
+
+            const response = await fetch(`${API_BASE}/evaluate-exam`, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify(payload)
             });
-              
+                          
             if (response.ok) {
                 const data = await response.json();
                 console.log("data: ", data);
